@@ -1,0 +1,313 @@
+
+/* import font */
+@font-face {
+  font-family: 'LaCosteInline';
+  src: url('fonts/LaCosteInline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'LaCosteInLine', serif;
+  box-sizing: border-box;
+}
+
+/*setup title*/
+p {
+  width: 600px;
+  height: auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 70px;
+}
+
+/*setup table*/
+#table {
+  text-align: center;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color: #0A581E;
+  border: 3px solid #1E1E1E;
+  border-radius: 10px;
+}
+#left-field {
+  display: inline-block;
+  border-right: 2px solid #03261F;
+  height: 500px;
+  width: 675px;
+}
+#right-field {
+  display: inline-block;
+  width: 250px;
+  vertical-align: top;
+}
+
+/* setup card-fields on the table */
+#dealer-cards {
+  margin-top: 40px;
+}
+.card-holder {
+  margin: 20px;
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+  border: 2px solid #FFE793;
+  border-radius: 5px;
+}
+#deck {
+  height: 250px;
+  padding-top: 50px;
+  position: relative;
+}
+
+/* card images should fit the container */
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* setup button */
+#btn {
+  margin-top: 100px;
+}
+button {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  font-size: 45px;
+}
+
+/* dealer cards with animations */
+.card1 {
+  position: relative;
+  animation-name: card1;
+  animation-duration: 2s;
+}
+.card2 {
+  position: relative;
+  animation-name: card2;
+  animation-duration: 2.5s;
+}
+.card3 {
+  position: relative;
+  animation-name: card3;
+  animation-duration: 3.25s;
+}
+
+/* player cards with animations during initial deal*/
+.cardA {
+  position: relative;
+  animation-name: cardA;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+.cardB {
+  position: relative;
+  animation-name: cardB;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+/* player cards with animations when hit button is pressed*/
+.cardAdeal {
+  position: relative;
+  animation-name: cardAdeal;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.cardBdeal {
+  position: relative;
+  animation-name: cardBdeal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* player cards when clicked */
+.cardDisappear {
+  position: relative;
+  animation-name: cardDisappear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/* keyframes for animations (my first tries with animations :) )*/
+/* initial deal */
+@keyframes card1 {
+  from {
+    top: 0px;
+    right: -550px;
+    transform: scale(1.2)
+  }
+  to {
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+}
+@keyframes card2 {
+  0%{
+    opacity: 0;
+    top: 0px;
+    right: -400px;
+    transform: scale(1.2)
+  }
+  50% {
+    opacity: 0;
+    top: 0px;
+    right: -400px;
+    transform: scale(1.2)
+  }
+  51%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+}
+@keyframes card3 {
+  0%{
+    opacity: 0;
+    top: 0px;
+    right: -300px;
+    transform: scale(1.2)
+  }
+  60% {
+    opacity: 0;
+    top: 0px;
+    right: -300px;
+    transform: scale(1.2)
+  }
+  61%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+}
+@keyframes cardA {
+  0%{
+    opacity: 0;
+    top: -190px;
+    right: -530px;
+    transform: scale(1.2)
+  }
+  60% {
+    opacity: 0;
+    top: -190px;
+    right: -530px;
+    transform: scale(1.2)
+  }
+  61%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+  
+}
+@keyframes cardB {
+  0%{
+    opacity: 0;
+    top: -190px;
+    right: -350px;
+    transform: scale(1.2)
+  }
+  80% {
+    opacity: 0;
+    top: -190px;
+    right: -350px;
+    transform: scale(1.2)
+  }
+  81%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+  /*from {
+    top: -190px;
+    right: -350px;
+    transform: scale(1.2)
+  }
+  to {
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }*/
+}
+
+/* deal when hit button is pressed*/
+@keyframes cardAdeal{
+  from {
+    opacity: 1;
+    top: -190px;
+    right: -530px;
+    transform: scale(1.2)
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+}
+@keyframes cardBdeal{
+  0%{
+    opacity: 0;
+    top: -190px;
+    right: -350px;
+    transform: scale(1.2)
+  }
+  50% {
+    opacity: 0;
+    top: -190px;
+    right: -350px;
+    transform: scale(1.2)
+  }
+  51%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+    right: 0px;
+    transform: scale(1)
+  }
+}
+
+/* player cards when clicked */
+@keyframes cardDisappear {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  50% {
+    top: 100px;
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 0;
+  }
+}
